@@ -1,0 +1,20 @@
+#hero {
+  background-image: url("/src/assets/images/hero.jpg");
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#hero > h1 {
+  font-size: x-large;
+  font-weight: bold;
+  max-width: 80%;
+}
+#hero > p {
+  font-size: small;
+  max-width: 50%;
+}
+
+/*# sourceMappingURL=hero.css.map */

@@ -1,0 +1,13 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+#services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */
