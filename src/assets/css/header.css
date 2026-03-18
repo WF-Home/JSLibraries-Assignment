@@ -1,0 +1,10 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#burger-icon {
+  width: 50px;
+}
+
+/*# sourceMappingURL=header.css.map */
