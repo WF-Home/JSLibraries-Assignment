@@ -7,12 +7,7 @@ function Main() {
     return (
         <main>
             <Hero />
-            <section id="services">
-                <h2>Services</h2>
-                <Service />
-                <Service />
-                <Service />
-            </section>
+            <Service />
             <Contact />
         </main>
     );
