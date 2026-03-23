@@ -1,21 +1,185 @@
-#hero {
-    background-image: url('/src/assets/images/hero.jpg');
-    height: 40vh;
+:root {
+  --vb-ink: #0f172a;        /* slate-900 */
+  --vb-ink-contrast: #ffffff;
+  --vb-ink-muted: #e5e7eb;  /* gray-200 */
+  --vb-brand: #0ea5e9;      /* sky-500 */
+  --vb-brand-600: #0284c7;  /* sky-600 */
+  --vb-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+/* --- Container --- */
+.vb-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
 
-    > h1 {
-        font-size: x-large;
-        font-weight: bold;
-        max-width: 80%;
-    }
+.vb-hero__slides {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    > p {
-        font-size: small;
-        max-width: 50%;
-    } 
+/* --- Slide --- */
+.vb-hero__slide {
+  position: relative;
+  min-height: var(--vb-hero-mobile-h, 60vh); /* mobile-first height */
+}
+
+@media (min-width: 768px) {
+  .vb-hero__slide {
+    min-height: var(--vb-hero-desktop-h, 80vh);
+  }
+}
+
+/* Background image layer */
+.vb-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02); /* subtle zoom to avoid edges */
+}
+
+/* Readability scrim */
+.vb-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.30) 40%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+}
+
+/* Content */
+.vb-hero__content {
+  position: relative;
+  z-index: 1;
+  color: var(--vb-ink-contrast);
+  display: grid;
+  align-content: end;
+  gap: 12px;
+  padding: 24px 16px 28px; /* mobile spacing */
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.vb-hero__heading {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  margin: 0;
+}
+
+.vb-hero__desc {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--vb-ink-muted);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.vb-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+  background: var(--vb-brand);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: var(--vb-shadow);
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vb-hero__cta:hover {
+  filter: brightness(0.97);
+  transform: translateY(-1px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .vb-hero__content {
+    padding: 40px 28px 48px;
+    gap: 16px;
+  }
+  .vb-hero__heading {
+    font-size: 2.75rem;
+  }
+  .vb-hero__desc {
+    font-size: 1.05rem;
+  }
+  .vb-hero__cta {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Arrows */
+.vb-hero__arrows {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none; /* let only buttons receive events */
+  padding: 0 6px;
+}
+
+.vb-hero__arrow {
+  pointer-events: auto;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  color: #fff;
+  background: rgba(15, 23, 42, 0.45); /* slate-900 w/ opacity */
+  backdrop-filter: blur(6px);
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.vb-hero__arrow:hover {
+  background: rgba(2, 132, 199, 0.65); /* brand tint */
+  transform: translateY(-1px);
+}
+
+/* Bullets */
+.vb-hero__bullets {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 0 12px;
+}
+
+.vb-hero__bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.vb-hero__bullet:hover {
+  background: #fff;
+  transform: scale(1.1);
+}
+
+/* Glide adds .glide__bullet--active to the current bullet */
+.vb-hero__bullet.glide__bullet--active {
+  background: #fff;
+  transform: scale(1.2);
 }
