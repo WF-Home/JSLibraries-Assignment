@@ -1,6 +1,7 @@
 import '../../css/main.css';
 import Hero from './Hero';
 import Service from './Service';
+import Contact from './Contact';
 
 function Main() {
     return (
@@ -12,6 +13,7 @@ function Main() {
                 <Service />
                 <Service />
             </section>
+            <Contact />
         </main>
     );
 }
