@@ -3,8 +3,8 @@
   --vb-border: #e5e7eb; /* gray-200 */
   --vb-ink: #111827; /* gray-900 */
   --vb-muted: #6b7280; /* gray-500 */
-  --vb-brand: #0ea5e9; /* sky-500 */
-  --vb-brand-600: #0284c7;
+  --vb-brand: #da980c; /* sky-500 */
+  --vb-brand-600: #da980c;
   --vb-card: #f9fafb;
   --vb-radius: 16px;
   --vb-shadow-sm: 0 6px 24px rgba(0,0,0,0.08);
@@ -92,6 +92,8 @@
 .vb-contact__actions {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 6px;
 }

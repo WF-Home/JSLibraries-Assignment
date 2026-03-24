@@ -1,9 +1,13 @@
 import '../../css/hero.css';
 import React from "react";
 import Glide from "@glidejs/glide";
-import "@glidejs/glide/dist/css/glide.core.min.css"; // core styles
-// Optionally include theme if you want base arrows/bullets styling
-// import "@glidejs/glide/dist/css/glide.theme.min.css";
+import "@glidejs/glide/dist/css/glide.core.min.css"; 
+import "@glidejs/glide/dist/css/glide.theme.min.css";
+import ssvilla from '../../images/ss-villa.jpeg';
+import infinity from '../../images/infinity.jpeg';
+import sunset from '../../images/sunset.jpeg';
+import spa from '../../images/spa.jpeg';
+import island from '../../images/island.jpeg';
 
 const defaultSlides = [
   {
@@ -12,8 +16,7 @@ const defaultSlides = [
     description:
       "Wake up to the sound of waves and panoramic ocean views in our private villas.",
     cta: { label: "Book now", href: "#contact" },
-    image:
-      "https://images.unsplash.com/photo-1501117716987-c8e8f3f0b68e?q=80&w=1600&auto=format&fit=crop",
+    image: ssvilla,
   },
   {
     id: "slide-2",
@@ -21,8 +24,7 @@ const defaultSlides = [
     description:
       "Unwind in our cliffside infinity pool with cocktails and golden sunsets.",
     cta: { label: "View services", href: "#services" },
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+    image: infinity,
   },
   {
     id: "slide-3",
@@ -30,8 +32,7 @@ const defaultSlides = [
     description:
       "Cuisine crafted by our executive chef, served beachfront under the stars.",
     cta: { label: "Reserve a table", href: "#contact" },
-    image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop",
+    image: sunset,
   },
   {
     id: "slide-4",
@@ -39,8 +40,7 @@ const defaultSlides = [
     description:
       "Holistic treatments inspired by the island—rejuvenate mind and body.",
     cta: { label: "Explore spa", href: "#services" },
-    image:
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1600&auto=format&fit=crop",
+    image: spa
   },
   {
     id: "slide-5",
@@ -48,8 +48,7 @@ const defaultSlides = [
     description:
       "Discover hidden lagoons, coral reefs, and scenic trails with our guides.",
     cta: { label: "Plan an adventure", href: "#about" },
-    image:
-      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop",
+    image: island,
   },
 ];
 
@@ -134,11 +133,6 @@ export default function Hero({
               <div className="vb-hero__content">
                 <h2 className="vb-hero__heading">{s.heading}</h2>
                 <p className="vb-hero__desc">{s.description}</p>
-                {s.cta?.href && s.cta?.label && (
-                  <a className="vb-hero__cta" href={s.cta.href}>
-                    {s.cta.label}
-                  </a>
-                )}
               </div>
             </li>
           ))}
@@ -152,8 +146,8 @@ export default function Hero({
           data-glide-dir="<"
           aria-label="Previous slide"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
           </svg>
         </button>
         <button
@@ -161,8 +155,8 @@ export default function Hero({
           data-glide-dir=">"
           aria-label="Next slide"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
           </svg>
         </button>
       </div>

@@ -1,3 +1,8 @@
+* {
+    scroll-behavior: smooth;
+    scroll-margin: 60px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

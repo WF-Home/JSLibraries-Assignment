@@ -31,7 +31,7 @@ export default function Contact({
   const [lat, lng] = coords;
 
   return (
-    <section className={`vb-contact ${className}`} aria-label="Contact Villa Bautista">
+    <section id="contact" className={`vb-contact ${className}`} aria-label="Contact Villa Bautista">
       {/* Contact Info (left on desktop, first on mobile) */}
       <div className="vb-contact__info">
         <h2 className="vb-contact__title">Get in touch</h2>

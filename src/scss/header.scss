@@ -3,7 +3,7 @@
   --vb-border: #e5e7eb;
   --vb-fg: #111827;
   --vb-fg-dim: #374151;
-  --vb-brand: #0ea5e9; /* sky-500 */
+  --vb-brand: #da980c; /* sky-500 */
   --vb-hover: #f3f4f6;
   --vb-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
@@ -98,6 +98,7 @@
   box-shadow: var(--vb-shadow);
   padding: 6px;
   width: 240px;
+  z-index: 999;
 }
 
 .vb-item {

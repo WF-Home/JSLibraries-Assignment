@@ -1,6 +1,9 @@
 import '../../css/service.css'
 import React from "react";
 import * as THREE from "three";
+import ocean from '../../images/ocean.jpeg';
+import spa from '../../images/spa.jpeg';
+import island from '../../images/island.jpeg';
 
 const defaultItems = [
   {
@@ -8,8 +11,7 @@ const defaultItems = [
     heading: "Oceanfront Suites",
     description:
       "Wake to the sound of waves in spacious suites with panoramic sea views and private terraces.",
-    image:
-      "https://images.unsplash.com/photo-1505692952048-0559070ed67f?q=80&w=1600&auto=format&fit=crop",
+    image: ocean,
     alt: "Oceanfront suite with terrace overlooking the sea",
   },
   {
@@ -17,8 +19,7 @@ const defaultItems = [
     heading: "Spa & Wellness",
     description:
       "Rejuvenate with island-inspired treatments, eucalyptus steam, and open-air massage salas.",
-    image:
-      "https://images.unsplash.com/photo-1551703599-6b3e8379b8f5?q=80&w=1600&auto=format&fit=crop",
+    image: spa,
     alt: "Spa stones and tropical leaves arranged beside a towel",
   },
   {
@@ -26,8 +27,7 @@ const defaultItems = [
     heading: "Island Adventures",
     description:
       "Explore coral reefs, hidden lagoons, and scenic trails—guided snorkeling, kayaking, and hikes.",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+    image: island,
     alt: "Crystal clear tropical water with gentle waves",
   },
 ];
@@ -192,13 +192,14 @@ export default function Service({
 
   return (
     <section
+      id="services"
       ref={containerRef}
       className={`vb-service ${className}`}
       aria-label="Villa Bautista services"
     >
       <div className="vb-service__inner">
         {items.slice(0, 3).map((svc, i) => {
-          const dir = i === 0 ? "left" : i === 1 ? "right" : "up";
+          const dir = i === 0 ? "left" : i === 1 ? "right" : "left";
           return (
             <article
               key={svc.id ?? i}

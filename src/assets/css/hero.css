@@ -2,8 +2,8 @@
   --vb-ink: #0f172a; /* slate-900 */
   --vb-ink-contrast: #ffffff;
   --vb-ink-muted: #e5e7eb; /* gray-200 */
-  --vb-brand: #0ea5e9; /* sky-500 */
-  --vb-brand-600: #0284c7; /* sky-600 */
+  --vb-brand: #da980c; /* sky-500 */
+  --vb-brand-600: #da980c; /* sky-600 */
   --vb-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
@@ -18,7 +18,7 @@
 .vb-hero__slides {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: auto;
 }
 
 /* --- Slide --- */
@@ -44,21 +44,29 @@
 /* Readability scrim */
 .vb-hero__scrim {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inset: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.15) 100%);
 }
 
 /* Content */
 .vb-hero__content {
-  position: relative;
+  position: absolute;
   z-index: 1;
   color: var(--vb-ink-contrast);
-  display: grid;
-  align-content: end;
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   padding: 24px 16px 28px; /* mobile spacing */
-  max-width: 1000px;
-  margin-inline: auto;
+  width: 80%;
+  max-width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .vb-hero__heading {
@@ -75,7 +83,7 @@
   line-height: 1.55;
   color: var(--vb-ink-muted);
   margin: 0;
-  max-width: 60ch;
+  max-width: 80%;
 }
 
 .vb-hero__cta {
@@ -123,28 +131,39 @@
   align-items: center;
   justify-content: space-between;
   pointer-events: none; /* let only buttons receive events */
-  padding: 0 6px;
+}
+
+.glide__arrow--left {
+  left: 0px !important;
+}
+
+.glide__arrow--right {
+  right: 0px !important;
 }
 
 .vb-hero__arrow {
   pointer-events: auto;
+  height: 100%;
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 10%;
   border: none;
   color: #fff;
+  border: none;
   background: rgba(15, 23, 42, 0.45); /* slate-900 w/ opacity */
   backdrop-filter: blur(6px);
-  border-radius: 999px;
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .vb-hero__arrow:hover {
-  background: rgba(2, 132, 199, 0.65); /* brand tint */
-  transform: translateY(-1px);
+  background: var(--vb-brand); /* brand tint */
 }
 
+@media (min-width: 768px) {
+  .vb-hero__arrow {
+    width: 10%;
+  }
+}
 /* Bullets */
 .vb-hero__bullets {
   position: absolute;

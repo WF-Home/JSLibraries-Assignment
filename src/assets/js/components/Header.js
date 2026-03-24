@@ -54,7 +54,6 @@ export default function Header() {
 
       {/* Inline nav for ≥768px (desktop/tablet) */}
       <nav className="vb-nav-inline" aria-label="Primary">
-        <a href="#about" className="vb-link">About</a>
         <a href="#services" className="vb-link">Services</a>
         <a href="#contact" className="vb-link vb-cta">Contact us</a>
       </nav>
