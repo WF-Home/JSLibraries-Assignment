@@ -87,9 +87,6 @@ export default function Header() {
                 "aria-label": "Mobile navigation",
               })}
             >
-              <a href="#about" className="vb-item" role="menuitem" onClick={handleNav}>
-                About
-              </a>
               <a href="#services" className="vb-item" role="menuitem" onClick={handleNav}>
                 Services
               </a>
