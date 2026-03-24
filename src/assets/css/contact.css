@@ -13,18 +13,20 @@
 /* --- Section container --- */
 /* Mobile-first: stacked; map below info */
 .vb-contact {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 16px;
-  padding: 24px 16px;
   background: var(--vb-bg);
+  width: 94%;
 }
 
 /* Desktop: two columns; map on the right */
 @media (min-width: 1024px) {
   .vb-contact {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
+    flex-direction: row;
+    justify-content: space-around;
     gap: 24px;
     padding: 40px 28px;
   }
